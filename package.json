@@ -84,5 +84,8 @@
       "npm run prettier",
       "npm run lint"
     ]
+  },
+  "dependencies": {
+    "native-icons": "^1.1.1-beta.1"
   }
 }
