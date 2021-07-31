@@ -1,8 +1,10 @@
 {
-  "extends": "@tsconfig/create-react-app/tsconfig.json",
+  "extends": "@tsconfig/react-native/tsconfig.json",
   "compilerOptions": {
     "declaration": true,
-    "jsx": "react-native"
+    "outDir": "lib",
+    "skipLibCheck": true,
+    "noEmit": false
   },
   "include": ["src"]
 }

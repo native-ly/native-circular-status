@@ -16,7 +16,9 @@
     "lint": "eslint --fix 'src/**/*.{tsx,ts}'",
     "prettier": "prettier --write 'src/**/*.{tsx,ts}'",
     "commit": "git-cz",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -37,10 +39,14 @@
     "url": "https://github.com/the-mes/react-native-typescript-npm-starter/issues"
   },
   "homepage": "https://github.com/the-mes/react-native-typescript-npm-starter#readme",
+  "dependencies": {
+    "native-icons": "^1.1.1-beta.1",
+    "react-native-progress": "^5.0.0"
+  },
   "devDependencies": {
     "@testing-library/jest-native": "^3.4.3",
     "@testing-library/react-native": "^7.1.0",
-    "@tsconfig/create-react-app": "^1.0.2",
+    "@tsconfig/react-native": "^1.0.2",
     "@types/jest": "^26.0.20",
     "@types/react": "^17.0.2",
     "@types/react-native": "^0.63.50",
@@ -74,18 +80,10 @@
       "path": "cz-emoji"
     }
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "src/**/*.{tsx,ts}": [
       "npm run prettier",
       "npm run lint"
     ]
-  },
-  "dependencies": {
-    "native-icons": "^1.1.1-beta.1"
   }
 }

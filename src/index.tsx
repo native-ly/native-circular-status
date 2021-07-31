@@ -1,5 +1,5 @@
 import Icon from 'native-icons'
-import { useCallback, useMemo } from 'react'
+import React, { useCallback, useMemo } from 'react'
 import { TouchableOpacity, StyleSheet } from 'react-native'
 
 interface NativeCircularStatusProps {
@@ -9,6 +9,7 @@ interface NativeCircularStatusProps {
   renderIcon?: (progress: number, paused: boolean) => React.ReactNode // ? rename
   progress: number
   animated?: boolean
+  animationDuration?: number
   color?: string // ?
   // colorPrimary: string;
   // colorSecondary: string;
@@ -17,7 +18,6 @@ interface NativeCircularStatusProps {
   thinking?: boolean
   // disabled: boolean;
   // onThinking: () => void;
-  animationDuration?: number
 }
 
 const NativeCircularStatus = ({
@@ -27,11 +27,11 @@ const NativeCircularStatus = ({
   renderIcon,
   progress,
   // animated,
+  // animationDuration,
   // color,
   onPause,
   onPlay,
   thinking,
-  // animationDuration,
 }: NativeCircularStatusProps) => {
   // const [status, setStatus] = useState(paused ? 'paused' : 'playing');
 
@@ -49,7 +49,7 @@ const NativeCircularStatus = ({
     }
 
     if (renderIcon) {
-      return renderIcon(progress, paused)
+      return renderIcon(progress, !!paused)
     }
 
     return <Icon name={paused ? iconPlay : iconPause} />
