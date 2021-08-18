@@ -45,6 +45,7 @@ import NativeCircularStatus from 'native-circular-status'
 
 ### NativeCircularStatus
 
+<!-- TODO -->
 | **name** | **type** | **description** |
 | -------- | -------- | --------------- |
 |          |          |                 |

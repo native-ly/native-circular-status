@@ -42,7 +42,7 @@ const NativeCircularStatus = ({
     } else {
       onPause?.()
     }
-  }, [])
+  }, [onPause, onPlay, paused])
 
   const innerComponent = useMemo(() => {
     if (thinking) {
@@ -54,7 +54,7 @@ const NativeCircularStatus = ({
     }
 
     return <Icon name={paused ? iconPlay : iconPause} />
-  }, [])
+  }, [iconPause, iconPlay, paused, progress, renderIcon, thinking])
 
   return (
     <TouchableOpacity style={styles.wrapper} onPress={handlePress}>
