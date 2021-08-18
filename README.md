@@ -24,13 +24,13 @@ Progress bar modeled on the animation from Apple Music on iOS
 First, install the library in your project by npm:
 
 ```sh
-npm install react-native-typescript-npm-starter
+npm install native-circular-status
 ```
 
 Or Yarn:
 
 ```sh
-yarn add react-native-typescript-npm-starter
+yarn add native-circular-status
 ```
 
 ## Getting Started
@@ -38,7 +38,7 @@ yarn add react-native-typescript-npm-starter
 **Connect the library with the project using ES6 import:**
 
 ```js
-import NativeCircularStatus from 'react-native-typescript-npm-starter'
+import NativeCircularStatus from 'native-circular-status'
 ```
 
 ## Options
@@ -53,7 +53,7 @@ import NativeCircularStatus from 'react-native-typescript-npm-starter'
 
 ```jsx
 import React from 'react'
-import NativeCircularStatus from 'native-positioning'
+import NativeCircularStatus from 'native-circular-status'
 
 const App = () => {
   return (
