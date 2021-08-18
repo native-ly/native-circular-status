@@ -1,7 +1,7 @@
-# React Native TypeScript npm starter Changelog
+# Native Circular Status Changelog
 
-## 0.0.0 (2020-02-02)
+## 0.0.0 (2021-xx-xx)
 
 ### Features
 
-- added `HelloWorld` component
+- added the `NativeCircularStatus` component

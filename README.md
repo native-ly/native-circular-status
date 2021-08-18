@@ -1,18 +1,14 @@
-# [React Native TypeScript npm starter](https://github.com/the-mes/react-native-typescript-npm-starter)
+<!-- TODO title -->
 
-[![NPM version](https://img.shields.io/npm/v/react-native-typescript-npm-starter?style=flat-square)](https://www.npmjs.com/package/react-native-typescript-npm-starter)
-[![NPM downloads](https://img.shields.io/npm/dm/react-native-typescript-npm-starter?style=flat-square)](https://www.npmjs.com/package/react-native-typescript-npm-starter)
-[![NPM license](https://img.shields.io/npm/l/react-native-typescript-npm-starter?style=flat-square)](https://www.npmjs.com/package/react-native-typescript-npm-starter)
-[![run in expo snack](https://img.shields.io/badge/Run%20in%20Snack-4630EB?style=flat-square&logo=EXPO&labelColor=FFF&logoColor=000)](https://snack.expo.io/<EXPO_ACCOUNT_HERE>/<SNACK_NAME_HERE>)
-[![Codecov](https://img.shields.io/codecov/c/github/the-mes/react-native-typescript-npm-starter?style=flat-square)](https://codecov.io/gh/the-mes/react-native-typescript-npm-starter)
-[![Travis](https://img.shields.io/travis/com/the-mes/react-native-typescript-npm-starter/main?style=flat-square)](https://travis-ci.com/the-mes/react-native-typescript-npm-starter)
+<!-- TODO badges -->
 
 ## About
 
-Template for React Native TypeScript library
+Progress bar modeled on the animation from Apple Music on iOS
 
-### Similar Projects / Alternatives / Idea
+### Similar Projects
 
+<!-- TODO -->
 - [example](#) by [John Doe](#)
 - [example-2](#) by [Jane Doe](#)
 
@@ -32,15 +28,15 @@ yarn add react-native-typescript-npm-starter
 
 ## Getting Started
 
-**• Connect libary with project using ES6 import:**
+**Connect the library with the project using ES6 import:**
 
 ```js
-import { HelloWorld } from 'react-native-typescript-npm-starter'
+import NativeCircularStatus from 'react-native-typescript-npm-starter'
 ```
 
 ## Options
 
-### HelloWorld
+### NativeCircularStatus
 
 | **name** | **type** | **description** |
 | -------- | -------- | --------------- |

@@ -1,7 +1,7 @@
 {
-  "name": "react-native-typescript-npm-starter",
+  "name": "native-circular-status",
   "version": "0.0.0",
-  "description": "Template for React Native TypeScript library",
+  "description": "Progress bar modeled on the animation from Apple Music on iOS",
   "author": "Jakub Biesiada",
   "license": "MIT",
   "main": "lib/index.js",
@@ -22,23 +22,29 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/the-mes/react-native-typescript-npm-starter.git"
+    "url": "https://github.com/native-ly/native-circular-status.git"
   },
   "keywords": [
-    "template",
-    "boilerplate",
+    "react",
+    "android",
+    "ios",
     "library",
     "mobile",
-    "typescript",
     "react-native",
     "component",
-    "starter",
+    "download",
+    "animation",
+    "progress-bar",
+    "loading",
+    "play",
+    "pause",
+    "indicator",
     "expo"
   ],
   "bugs": {
-    "url": "https://github.com/the-mes/react-native-typescript-npm-starter/issues"
+    "url": "https://github.com/native-ly/native-circular-status/issues"
   },
-  "homepage": "https://github.com/the-mes/react-native-typescript-npm-starter#readme",
+  "homepage": "https://github.com/native-ly/native-circular-status#readme",
   "dependencies": {
     "native-icons": "^1.1.1-beta.1",
     "react-native-progress": "^5.0.0"
