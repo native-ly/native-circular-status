@@ -26,6 +26,7 @@ const NativeCircularStatus = ({
   paused,
   renderIcon,
   progress,
+  // size/variant // TODO
   // animated,
   // animationDuration,
   // color,

@@ -53,21 +53,12 @@ import NativeCircularStatus from 'react-native-typescript-npm-starter'
 
 ```jsx
 import React from 'react'
-import { View } from 'react-native'
-import { positioning } from 'native-positioning'
+import NativeCircularStatus from 'native-positioning'
 
 const App = () => {
   return (
-    <View
-      style={{
-        backgroundColor: 'red',
-        ...positioning(0, 20, 15),
-        // top: 0,
-        // right: 20,
-        // bottom: 15,
-        // left: 20,
-      }}
-    />
+    // TODO update example
+    <NativeCircularStatus progress={0} />
   )
 }
 
