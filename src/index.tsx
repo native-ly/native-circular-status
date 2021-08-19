@@ -1,6 +1,12 @@
 import Icon from 'native-icons'
 import React, { useCallback, useMemo } from 'react'
-import { TouchableOpacity, StyleSheet, View, ViewProps } from 'react-native'
+import {
+  TouchableOpacity,
+  StyleSheet,
+  View,
+  ViewProps,
+  TouchableOpacityProps,
+} from 'react-native'
 import * as Progress from 'react-native-progress'
 import type { IconProps } from 'react-native-vector-icons/Icon'
 
@@ -20,7 +26,7 @@ const SIZES = {
 
 type Variant = 'normal' | 'compact'
 
-interface NativeCircularStatusProps {
+interface NativeCircularStatusProps extends TouchableOpacityProps {
   progress: number
   iconPause?: string
   iconPlay?: string
@@ -33,8 +39,6 @@ interface NativeCircularStatusProps {
   onPause?: () => void
   onPlay?: () => void
   thinking?: boolean
-  disabled?: boolean
-  containerProps?: ViewProps
   contentProps?: ViewProps
   iconProps?: Partial<IconProps>
   placeholderProps?: ViewProps
@@ -55,11 +59,11 @@ const NativeCircularStatus = ({
   onPlay,
   thinking = false,
   disabled = false,
-  containerProps = {},
   contentProps = {},
   iconProps = {},
   placeholderProps = {},
   progressProps = {},
+  ...containerProps
 }: NativeCircularStatusProps) => {
   const handlePress = useCallback(() => {
     if (paused) {
