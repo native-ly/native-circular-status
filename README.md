@@ -40,7 +40,7 @@ import NativeCircularStatus from 'native-circular-status'
 
 ## Options
 
-Component extends `TouchableOpacityProps` and has the following props:
+Component extends [TouchableOpacityProps](https://reactnative.dev/docs/touchableopacity#props)
 
 <!-- TODO -->
 
