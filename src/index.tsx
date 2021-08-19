@@ -14,14 +14,14 @@ const DEFAULTS = {
   ICON_PAUSE: 'square',
   ICON_PLAY: 'pause',
   COLOR: '#fb2c53',
-  PLACEHOLDER_COLOR: '#eeeeef',
+  PLACEHOLDER_COLOR: '#e4e4e5',
 }
 
 const PROGRESS_WIDTH = 2
 
 const SIZES = {
   COMPACT: 12,
-  NORMAL: 30,
+  NORMAL: 28,
 }
 
 type Variant = 'normal' | 'compact'
