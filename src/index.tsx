@@ -14,7 +14,7 @@ const DEFAULTS = {
   ICON_PAUSE: 'square',
   ICON_PLAY: 'pause',
   COLOR: '#fb2c53',
-  PLACEHOLDER_COLOR: '#e4e4e5',
+  PLACEHOLDER_COLOR: '#efefef',
 }
 
 const PROGRESS_WIDTH = 2
