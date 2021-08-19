@@ -27,23 +27,23 @@ const SIZES = {
 type Variant = 'normal' | 'compact'
 
 interface NativeCircularStatusProps extends TouchableOpacityProps {
-  progress: number
-  iconPause?: string
-  iconPlay?: string
-  paused?: boolean
+  readonly progress: number
+  readonly iconPause?: string
+  readonly iconPlay?: string
+  readonly paused?: boolean
   renderContent?: (progress: number, paused: boolean) => React.ReactNode
-  variant?: Variant
-  animated?: boolean
-  color?: string
-  placeholderColor?: string
+  readonly variant?: Variant
+  readonly animated?: boolean
+  readonly color?: string
+  readonly placeholderColor?: string
   onPause?: () => void
   onPlay?: () => void
   onStatusChanged?: (paused: boolean) => void
-  thinking?: boolean
-  contentProps?: ViewProps
-  iconProps?: Partial<IconProps>
-  placeholderProps?: ViewProps
-  progressProps?: Progress.CirclePropTypes
+  readonly thinking?: boolean
+  readonly contentProps?: ViewProps
+  readonly iconProps?: Partial<IconProps>
+  readonly placeholderProps?: ViewProps
+  readonly progressProps?: Progress.CirclePropTypes
 }
 
 const NativeCircularStatus = ({
