@@ -20,7 +20,6 @@ const SIZES = {
 
 type Variant = 'normal' | 'compact'
 
-// TODO add discriminated union types
 interface NativeCircularStatusProps {
   progress: number
   iconPause?: string
@@ -83,7 +82,7 @@ const NativeCircularStatus = ({
 
   const { style: containerStyle = {}, ...restContainerProps } = containerProps
   const { style: contentStyle = {}, ...restContentProps } = contentProps
-  // const { style: iconStyle = {}, ...restIconProps } = iconProps;
+  const { style: iconStyle = {}, ...restIconProps } = iconProps
   const { style: placeholderStyle = {}, ...restPlaceholderProps } =
     placeholderProps
 
@@ -95,15 +94,23 @@ const NativeCircularStatus = ({
     return (
       <Icon
         type="ionicons"
-        size={12} // TODO
+        size={12}
         color={color}
         name={paused ? iconPlay : iconPause}
-        // TODO center
-        style={{ paddingLeft: 1 }}
-        {...iconProps}
+        style={StyleSheet.flatten([{ paddingLeft: 1 }, iconStyle])}
+        {...restIconProps}
       />
     )
-  }, [color, iconPause, iconPlay, iconProps, paused, progress, renderContent])
+  }, [
+    color,
+    iconPause,
+    iconPlay,
+    iconStyle,
+    paused,
+    progress,
+    renderContent,
+    restIconProps,
+  ])
 
   const isNormal = useMemo(() => variant === 'normal', [variant])
 
