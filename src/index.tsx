@@ -3,12 +3,19 @@ import React, { useCallback, useMemo } from 'react'
 import { TouchableOpacity, StyleSheet, View, ViewProps } from 'react-native'
 import * as Progress from 'react-native-progress'
 import type { IconProps } from 'react-native-vector-icons/Icon'
-// import Color from 'color'
 
 const DEFAULTS = {
   ICON_PAUSE: 'square',
   ICON_PLAY: 'pause',
   COLOR: '#fb2c53',
+  PLACEHOLDER_COLOR: '#eeeeef',
+}
+
+const PROGRESS_WIDTH = 3
+
+const SIZES = {
+  COMPACT: 12,
+  NORMAL: 32,
 }
 
 type Variant = 'normal' | 'compact'
@@ -45,7 +52,7 @@ const NativeCircularStatus = ({
   variant = 'normal',
   animated = true,
   color = DEFAULTS.COLOR,
-  placeholderColor = '#eeeeef',
+  placeholderColor = DEFAULTS.PLACEHOLDER_COLOR,
   onPause,
   onPlay,
   thinking = false,
@@ -68,11 +75,11 @@ const NativeCircularStatus = ({
   const size = useMemo(() => {
     switch (variant) {
       case 'compact':
-        return 12
+        return SIZES.COMPACT
 
       case 'normal':
       default:
-        return 32
+        return SIZES.NORMAL
     }
   }, [variant])
 
@@ -94,28 +101,39 @@ const NativeCircularStatus = ({
         color={color}
         name={paused ? iconPlay : iconPause}
         // TODO center
-        // style={{paddingLeft: 1}}
+        style={{ paddingLeft: 1 }}
         {...iconProps}
       />
     )
   }, [color, iconPause, iconPlay, iconProps, paused, progress, renderContent])
+
+  const isHiddenContent = useMemo(
+    () => !showText || !thinking,
+    [showText, thinking]
+  )
+
+  const isNormal = useMemo(() => variant === 'normal', [variant])
 
   return (
     <TouchableOpacity
       onPress={handlePress}
       disabled={disabled}
       style={StyleSheet.flatten([
-        styles({ size }).container,
-        disabled ? styles({ size }).containerDisabled : {},
+        styles.container,
+        {
+          width: size,
+          height: size,
+        },
+        disabled ? styles.containerDisabled : {},
         containerStyle,
       ])}
       {...restContainerProps}
     >
-      {(!showText || !thinking) && variant === 'normal' && (
+      {!isHiddenContent && isNormal && (
         <View
           style={StyleSheet.flatten([
-            styles({ size }).content,
-            styles({ size }).absoluteElement,
+            styles.content,
+            styles.absoluteElement,
             contentStyle,
           ])}
           {...restContentProps}
@@ -127,8 +145,12 @@ const NativeCircularStatus = ({
       {!thinking && (
         <View
           style={StyleSheet.flatten([
-            styles({ size }).placeholder,
-            styles({ size }).absoluteElement,
+            styles.placeholder,
+            styles.absoluteElement,
+            {
+              borderRadius: size / 2,
+              borderColor: placeholderColor,
+            },
             placeholderStyle,
           ])}
           {...restPlaceholderProps}
@@ -137,24 +159,23 @@ const NativeCircularStatus = ({
 
       <Progress.Circle
         animated={animated}
-        indeterminate={thinking && variant === 'normal'}
+        indeterminate={thinking && isNormal}
         borderWidth={!thinking ? 0 : undefined}
         borderColor={color}
         color={color}
         progress={progress}
         size={size}
-        showsText={!thinking && showText && variant === 'normal'} // TODO
+        thickness={PROGRESS_WIDTH}
+        showsText={!thinking && showText && isNormal}
         {...progressProps}
       />
     </TouchableOpacity>
   )
 }
 
-const styles = StyleSheet.create(({ placeholderColor = '#eeeeef', size }) => ({
+const styles = StyleSheet.create({
   container: {
     position: 'relative',
-    width: size,
-    height: size,
   },
   containerDisabled: {
     opacity: 0.5,
@@ -164,15 +185,13 @@ const styles = StyleSheet.create(({ placeholderColor = '#eeeeef', size }) => ({
     alignItems: 'center',
   },
   placeholder: {
-    borderRadius: size / 2,
-    borderColor: placeholderColor,
-    borderWidth: 3,
+    borderWidth: PROGRESS_WIDTH,
   },
   absoluteElement: {
     position: 'absolute',
     width: '100%',
     height: '100%',
   },
-}))
+})
 
 export default NativeCircularStatus
