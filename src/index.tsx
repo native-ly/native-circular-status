@@ -35,7 +35,6 @@ interface NativeCircularStatusProps {
   onPlay?: () => void
   thinking?: boolean
   disabled?: boolean
-  showText?: boolean
   containerProps?: ViewProps
   contentProps?: ViewProps
   iconProps?: Partial<IconProps>
@@ -57,7 +56,6 @@ const NativeCircularStatus = ({
   onPlay,
   thinking = false,
   disabled = false,
-  showText = false,
   containerProps = {},
   contentProps = {},
   iconProps = {},
@@ -107,11 +105,6 @@ const NativeCircularStatus = ({
     )
   }, [color, iconPause, iconPlay, iconProps, paused, progress, renderContent])
 
-  const isHiddenContent = useMemo(
-    () => !showText || !thinking,
-    [showText, thinking]
-  )
-
   const isNormal = useMemo(() => variant === 'normal', [variant])
 
   return (
@@ -129,7 +122,7 @@ const NativeCircularStatus = ({
       ])}
       {...restContainerProps}
     >
-      {!isHiddenContent && isNormal && (
+      {!thinking && isNormal && (
         <View
           style={StyleSheet.flatten([
             styles.content,
@@ -166,7 +159,6 @@ const NativeCircularStatus = ({
         progress={progress}
         size={size}
         thickness={PROGRESS_WIDTH}
-        showsText={!thinking && showText && isNormal}
         {...progressProps}
       />
     </TouchableOpacity>
