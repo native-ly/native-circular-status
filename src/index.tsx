@@ -1,41 +1,61 @@
 import Icon from 'native-icons'
-import React, { useCallback, useMemo, useState } from 'react'
-import { TouchableOpacity, StyleSheet, View } from 'react-native'
+import React, { useCallback, useMemo } from 'react'
+import { TouchableOpacity, StyleSheet, View, ViewProps } from 'react-native'
 import * as Progress from 'react-native-progress'
+import type { IconProps } from 'react-native-vector-icons/Icon'
 // import Color from 'color'
+
+const DEFAULTS = {
+  ICON_PAUSE: 'square',
+  ICON_PLAY: 'pause',
+  COLOR: '#fb2c53',
+}
+
+type Variant = 'normal' | 'compact'
 
 // TODO add discriminated union types
 interface NativeCircularStatusProps {
+  progress: number
   iconPause?: string
   iconPlay?: string
   paused?: boolean
-  renderIcon?: (progress: number, paused: boolean) => React.ReactNode // ? rename
-  progress: number
+  renderContent?: (progress: number, paused: boolean) => React.ReactNode
+  variant?: Variant
   animated?: boolean
-  // animationDuration?: number
   color?: string
-  // placeholderColor?: string;
+  placeholderColor?: string
   onPause?: () => void
   onPlay?: () => void
   thinking?: boolean
   disabled?: boolean
+  showText?: boolean
+  containerProps?: ViewProps
+  contentProps?: ViewProps
+  iconProps?: Partial<IconProps>
+  placeholderProps?: ViewProps
+  progressProps?: Progress.CirclePropTypes
 }
 
 const NativeCircularStatus = ({
-  iconPause = 'square',
-  iconPlay = 'pause',
-  paused,
-  renderIcon,
   progress,
-  // size/variant // TODO
-  animated,
-  // animationDuration,
-  color = '#fb2c53',
-  // placeholderColor,
+  iconPause = DEFAULTS.ICON_PAUSE,
+  iconPlay = DEFAULTS.ICON_PLAY,
+  paused = false,
+  renderContent,
+  variant = 'normal',
+  animated = true,
+  color = DEFAULTS.COLOR,
+  placeholderColor = '#eeeeef',
   onPause,
   onPlay,
-  thinking,
-  disabled,
+  thinking = false,
+  disabled = false,
+  showText = false,
+  containerProps = {},
+  contentProps = {},
+  iconProps = {},
+  placeholderProps = {},
+  progressProps = {},
 }: NativeCircularStatusProps) => {
   const handlePress = useCallback(() => {
     if (paused) {
@@ -45,80 +65,114 @@ const NativeCircularStatus = ({
     }
   }, [onPause, onPlay, paused])
 
-  const innerComponent = useMemo(() => {
-    if (thinking) {
-      return null
-    }
+  const size = useMemo(() => {
+    switch (variant) {
+      case 'compact':
+        return 12
 
-    if (renderIcon) {
-      return renderIcon(progress, !!paused)
+      case 'normal':
+      default:
+        return 32
+    }
+  }, [variant])
+
+  const { style: containerStyle = {}, ...restContainerProps } = containerProps
+  const { style: contentStyle = {}, ...restContentProps } = contentProps
+  // const { style: iconStyle = {}, ...restIconProps } = iconProps;
+  const { style: placeholderStyle = {}, ...restPlaceholderProps } =
+    placeholderProps
+
+  const innerComponent = useMemo(() => {
+    if (renderContent) {
+      return renderContent(progress, !!paused)
     }
 
     return (
       <Icon
         type="ionicons"
-        size={16} // TODO
+        size={12} // TODO
         color={color}
         name={paused ? iconPlay : iconPause}
         // TODO center
         // style={{paddingLeft: 1}}
+        {...iconProps}
       />
     )
-  }, [color, iconPause, iconPlay, paused, progress, renderIcon, thinking])
+  }, [color, iconPause, iconPlay, iconProps, paused, progress, renderContent])
 
   return (
     <TouchableOpacity
       onPress={handlePress}
       disabled={disabled}
       style={StyleSheet.flatten([
-        styles.wrapper,
-        disabled ? styles.wrapperDisabled : {},
+        styles({ size }).container,
+        disabled ? styles({ size }).containerDisabled : {},
+        containerStyle,
       ])}
+      {...restContainerProps}
     >
-      {/* TODO add option show text */}
-      <View style={styles.content}>{innerComponent}</View>
+      {(!showText || !thinking) && variant === 'normal' && (
+        <View
+          style={StyleSheet.flatten([
+            styles({ size }).content,
+            styles({ size }).absoluteElement,
+            contentStyle,
+          ])}
+          {...restContentProps}
+        >
+          {innerComponent}
+        </View>
+      )}
 
-      {!thinking && <View style={styles.placeholder} />}
+      {!thinking && (
+        <View
+          style={StyleSheet.flatten([
+            styles({ size }).placeholder,
+            styles({ size }).absoluteElement,
+            placeholderStyle,
+          ])}
+          {...restPlaceholderProps}
+        />
+      )}
 
       <Progress.Circle
         animated={animated}
-        indeterminate={thinking}
-        // indeterminateAnimationDuration={animationDuration}
+        indeterminate={thinking && variant === 'normal'}
         borderWidth={!thinking ? 0 : undefined}
         borderColor={color}
         color={color}
         progress={progress}
-        // showsText // TODO
+        size={size}
+        showsText={!thinking && showText && variant === 'normal'} // TODO
+        {...progressProps}
       />
     </TouchableOpacity>
   )
 }
 
-const styles = StyleSheet.create({
-  wrapper: {
+const styles = StyleSheet.create(({ placeholderColor = '#eeeeef', size }) => ({
+  container: {
     position: 'relative',
-    width: 40, // TODO
-    height: 40, // TODO
+    width: size,
+    height: size,
   },
-  wrapperDisabled: {
+  containerDisabled: {
     opacity: 0.5,
   },
-  // TODO create base for content, placeholder
   content: {
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
   },
   placeholder: {
-    borderRadius: 20, // TODO
-    borderWidth: 3, // TODO
-    borderColor: '#ddd', // TODO
-    width: '100%', // TODO
-    height: '100%', // TODO
-    position: 'absolute',
+    borderRadius: size / 2,
+    borderColor: placeholderColor,
+    borderWidth: 3,
   },
-})
+  absoluteElement: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+  },
+}))
 
 export default NativeCircularStatus
