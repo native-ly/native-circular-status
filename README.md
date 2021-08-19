@@ -40,8 +40,6 @@ import NativeCircularStatus from 'native-circular-status'
 
 ## Options
 
-### NativeCircularStatus
-
 Component extends `TouchableOpacityProps` and has the following props:
 
 <!-- TODO -->

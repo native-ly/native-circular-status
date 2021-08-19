@@ -141,6 +141,7 @@ const NativeCircularStatus = ({
       ])}
       {...restContainerProps}
     >
+      {/* TODO? refactor */}
       {!thinking && isNormal && (
         <View
           style={StyleSheet.flatten([
@@ -154,7 +155,8 @@ const NativeCircularStatus = ({
         </View>
       )}
 
-      {!thinking && (
+      {/* TODO refactor */}
+      {!(thinking && isNormal) && (
         <View
           style={StyleSheet.flatten([
             styles.placeholder,
@@ -171,8 +173,8 @@ const NativeCircularStatus = ({
 
       <Progress.Circle
         animated={animated}
-        indeterminate={thinking && isNormal}
-        borderWidth={thinking ? PROGRESS_WIDTH : 0}
+        indeterminate={thinking && isNormal} // TODO refactor
+        borderWidth={thinking && isNormal ? PROGRESS_WIDTH : 0} // TODO refactor
         borderColor={placeholderColor}
         color={color}
         progress={progress}
