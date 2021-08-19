@@ -5,7 +5,7 @@
 [![NPM license](https://flat.badgen.net/npm/license/native-circular-status)](https://www.npmjs.com/package/native-circular-status)
 [![run in expo snack](https://img.shields.io/badge/Run%20in%20Snack-4630EB?style=flat-square&logo=EXPO&labelColor=FFF&logoColor=000)](https://snack.expo.io/@jbiesiada/native-circular-status)
 [![Codecov](https://flat.badgen.net/codecov/c/github/native-ly/native-circular-status)](https://codecov.io/gh/native-ly/native-circular-status)
-[![Travis](https://flat.badgen.net/travis/native-ly/native-circular-status)](https://travis-ci.com/native-ly/native-circular-status)
+[![Travis](https://img.shields.io/travis/com/native-ly/native-circular-status/main?style=flat-square)](https://travis-ci.com/native-ly/native-circular-status)
 [![Bundle size](https://flat.badgen.net/packagephobia/install/native-circular-status)](https://packagephobia.com/result?p=native-circular-status)
 
 ## About
