@@ -60,7 +60,7 @@ const NativeCircularStatus = ({
   onPlay,
   onStatusChanged,
   thinking = false,
-  disabled = false,
+  disabled,
   contentProps = {},
   iconProps = {},
   placeholderProps = {},

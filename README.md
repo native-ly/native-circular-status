@@ -45,25 +45,26 @@ import NativeCircularStatus from 'native-circular-status'
 Component extends `TouchableOpacityProps` and has the following props:
 
 <!-- TODO -->
-| **name** | **type** | **default** | **description** |
-| -------- | -------- | --------------- |-------------- |
-| progress |          |                 | |
-| iconPause |          |                 | |
-| iconPlay |          |                 | |
-| paused |          |                 | |
-| renderContent |          |                 | |
-| variant |          |                 | |
-| animated |          |                 | |
-| color |          |                 | |
-| placeholderColor |          |                 | |
-| onPause |          |                 | |
-| onPlay |          |                 | |
-| onStatusChanged |          |                 | |
-| thinking |          |                 | |
-| contentProps |          |                 | |
-| iconProps |          |                 | |
-| placeholderProps |          |                 | |
-| progressProps |          |                 | |
+
+| **name**         | **type**              | **default** | **description** |
+| ---------------- | --------------------- | ----------- | --------------- |
+| progress         | number                |             |                 |
+| iconPause        |                       |             |                 |
+| iconPlay         |                       |             |                 |
+| paused           | boolean               | `false`     |                 |
+| renderContent    |                       |             |                 |
+| variant          | 'normal' or 'compact' | `normal`    |                 |
+| animated         | boolean               | `true`      |                 |
+| color            | string                | `#fb2c53`   |                 |
+| placeholderColor | string                | `#eeeeef`   |                 |
+| onPause          |                       |             |                 |
+| onPlay           |                       |             |                 |
+| onStatusChanged  |                       |             |                 |
+| thinking         | boolean               | `false`     |                 |
+| contentProps     |                       |             |                 |
+| iconProps        |                       |             |                 |
+| placeholderProps |                       |             |                 |
+| progressProps    |                       |             |                 |
 
 ## Example
 
@@ -78,8 +79,8 @@ const App = () => {
     <NativeCircularStatus
       progress={0.4}
       paused={paused}
-      onPlay={() => setPaused(false)} 
-      onPause={() => setPaused(true)} 
+      onPlay={() => setPaused(false)}
+      onPause={() => setPaused(true)}
     />
   )
 }
