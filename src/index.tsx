@@ -17,11 +17,11 @@ const DEFAULTS = {
   PLACEHOLDER_COLOR: '#eeeeef',
 }
 
-const PROGRESS_WIDTH = 3
+const PROGRESS_WIDTH = 2
 
 const SIZES = {
   COMPACT: 12,
-  NORMAL: 32,
+  NORMAL: 30,
 }
 
 type Variant = 'normal' | 'compact'
@@ -38,6 +38,7 @@ interface NativeCircularStatusProps extends TouchableOpacityProps {
   placeholderColor?: string
   onPause?: () => void
   onPlay?: () => void
+  onStatusChanged?: (paused: boolean) => void
   thinking?: boolean
   contentProps?: ViewProps
   iconProps?: Partial<IconProps>
@@ -57,6 +58,7 @@ const NativeCircularStatus = ({
   placeholderColor = DEFAULTS.PLACEHOLDER_COLOR,
   onPause,
   onPlay,
+  onStatusChanged,
   thinking = false,
   disabled = false,
   contentProps = {},
@@ -66,12 +68,18 @@ const NativeCircularStatus = ({
   ...containerProps
 }: NativeCircularStatusProps) => {
   const handlePress = useCallback(() => {
+    if (thinking) {
+      return
+    }
+
     if (paused) {
       onPlay?.()
     } else {
       onPause?.()
     }
-  }, [onPause, onPlay, paused])
+
+    onStatusChanged?.(!paused)
+  }, [onPause, onPlay, onStatusChanged, paused, thinking])
 
   const size = useMemo(() => {
     switch (variant) {
@@ -98,7 +106,7 @@ const NativeCircularStatus = ({
     return (
       <Icon
         type="ionicons"
-        size={12}
+        size={10}
         color={color}
         name={paused ? iconPlay : iconPause}
         style={StyleSheet.flatten([{ paddingLeft: 1 }, iconStyle])}
@@ -164,8 +172,8 @@ const NativeCircularStatus = ({
       <Progress.Circle
         animated={animated}
         indeterminate={thinking && isNormal}
-        borderWidth={!thinking ? 0 : undefined}
-        borderColor={color}
+        borderWidth={thinking ? PROGRESS_WIDTH : 0}
+        borderColor={placeholderColor}
         color={color}
         progress={progress}
         size={size}

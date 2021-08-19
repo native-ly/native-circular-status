@@ -1,7 +1,7 @@
 {
   "name": "native-circular-status",
   "version": "0.0.0",
-  "description": "Progress bar modeled on the animation from Apple Music on iOS",
+  "description": "Progress bar modeled on the animation from Apple Music and App Store on iOS",
   "author": "Jakub Biesiada",
   "license": "MIT",
   "main": "lib/index.js",

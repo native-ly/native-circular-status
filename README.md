@@ -10,13 +10,11 @@
 
 ## About
 
-Progress bar modeled on the animation from Apple Music on iOS
+Progress bar modeled on the animation from Apple Music and App Store on iOS
 
 ### Similar Projects
 
-<!-- TODO -->
-- [example](#) by [John Doe](#)
-- [example-2](#) by [Jane Doe](#)
+- [react-native-progress](https://github.com/oblador/react-native-progress) by [Joel Arvidsson](https://github.com/oblador)
 
 ## How to Install
 
@@ -44,21 +42,45 @@ import NativeCircularStatus from 'native-circular-status'
 
 ### NativeCircularStatus
 
+Component extends `TouchableOpacityProps` and has the following props:
+
 <!-- TODO -->
-| **name** | **type** | **description** |
-| -------- | -------- | --------------- |
-|          |          |                 |
+| **name** | **type** | **default** | **description** |
+| -------- | -------- | --------------- |-------------- |
+| progress |          |                 | |
+| iconPause |          |                 | |
+| iconPlay |          |                 | |
+| paused |          |                 | |
+| renderContent |          |                 | |
+| variant |          |                 | |
+| animated |          |                 | |
+| color |          |                 | |
+| placeholderColor |          |                 | |
+| onPause |          |                 | |
+| onPlay |          |                 | |
+| onStatusChanged |          |                 | |
+| thinking |          |                 | |
+| contentProps |          |                 | |
+| iconProps |          |                 | |
+| placeholderProps |          |                 | |
+| progressProps |          |                 | |
 
 ## Example
 
 ```jsx
-import React from 'react'
+import React, { useState } from 'react'
 import NativeCircularStatus from 'native-circular-status'
 
 const App = () => {
+  const [paused, setPaused] = useState(false)
+
   return (
-    // TODO update example
-    <NativeCircularStatus progress={0} />
+    <NativeCircularStatus
+      progress={0.4}
+      paused={paused}
+      onPlay={() => setPaused(false)} 
+      onPause={() => setPaused(true)} 
+    />
   )
 }
 
