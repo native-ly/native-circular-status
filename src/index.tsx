@@ -1,9 +1,10 @@
 import Icon from 'native-icons'
 import React, { useCallback, useMemo, useState } from 'react'
 import { TouchableOpacity, StyleSheet, View } from 'react-native'
-import Progress from 'react-native-progress/Circle'
-import Color from 'color'
+import * as Progress from 'react-native-progress'
+// import Color from 'color'
 
+// TODO add discriminated union types
 interface NativeCircularStatusProps {
   iconPause?: string
   iconPlay?: string
@@ -11,15 +12,13 @@ interface NativeCircularStatusProps {
   renderIcon?: (progress: number, paused: boolean) => React.ReactNode // ? rename
   progress: number
   animated?: boolean
-  animationDuration?: number
-  color?: string // ?
-  // colorPrimary: string;
-  // colorSecondary: string;
+  // animationDuration?: number
+  color?: string
+  // placeholderColor?: string;
   onPause?: () => void
   onPlay?: () => void
   thinking?: boolean
-  disabled: boolean
-  // onThinking: () => void;
+  disabled?: boolean
 }
 
 const NativeCircularStatus = ({
@@ -28,21 +27,16 @@ const NativeCircularStatus = ({
   paused,
   renderIcon,
   progress,
-  // play color -
-  // pause color -
-  // thinking color -
   // size/variant // TODO
-  // TODO controlled/uncontrolled component
   animated,
-  animationDuration,
+  // animationDuration,
   color = '#fb2c53',
+  // placeholderColor,
   onPause,
   onPlay,
   thinking,
   disabled,
 }: NativeCircularStatusProps) => {
-  // const [status, setStatus] = useState(paused ? 'paused' : 'playing');
-
   const handlePress = useCallback(() => {
     if (paused) {
       onPlay?.()
@@ -66,27 +60,35 @@ const NativeCircularStatus = ({
         size={16} // TODO
         color={color}
         name={paused ? iconPlay : iconPause}
+        // TODO center
+        // style={{paddingLeft: 1}}
       />
     )
   }, [color, iconPause, iconPlay, paused, progress, renderIcon, thinking])
 
   return (
     <TouchableOpacity
-      disabled={disabled}
-      style={styles.wrapper}
       onPress={handlePress}
+      disabled={disabled}
+      style={StyleSheet.flatten([
+        styles.wrapper,
+        disabled ? styles.wrapperDisabled : {},
+      ])}
     >
+      {/* TODO add option show text */}
       <View style={styles.content}>{innerComponent}</View>
 
-      <View style={styles.placeholder} />
+      {!thinking && <View style={styles.placeholder} />}
 
-      <Progress
+      <Progress.Circle
         animated={animated}
         indeterminate={thinking}
-        indeterminateAnimationDuration={animationDuration}
+        // indeterminateAnimationDuration={animationDuration}
         borderWidth={!thinking ? 0 : undefined}
         borderColor={color}
+        color={color}
         progress={progress}
+        // showsText // TODO
       />
     </TouchableOpacity>
   )
@@ -98,20 +100,24 @@ const styles = StyleSheet.create({
     width: 40, // TODO
     height: 40, // TODO
   },
-  placeholder: {
-    borderRadius: 20, // TODO
-    borderWidth: 3, // TODO
-    borderColor: '#f0f', // TODO
-    height: 40, // TODO
-    width: 40, // TODO
-    position: 'absolute',
+  wrapperDisabled: {
+    opacity: 0.5,
   },
+  // TODO create base for content, placeholder
   content: {
     position: 'absolute',
     width: '100%',
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  placeholder: {
+    borderRadius: 20, // TODO
+    borderWidth: 3, // TODO
+    borderColor: '#ddd', // TODO
+    width: '100%', // TODO
+    height: '100%', // TODO
+    position: 'absolute',
   },
 })
 
