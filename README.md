@@ -15,6 +15,7 @@ Progress bar modeled on the animation from Apple Music and App Store on iOS
 ### Similar Projects
 
 - [react-native-progress](https://github.com/oblador/react-native-progress) by [Joel Arvidsson](https://github.com/oblador)
+<!-- TODO add more similar projects -->
 
 ## How to Install
 
