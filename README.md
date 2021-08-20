@@ -1,4 +1,4 @@
-# [Native Circular Status](https://github.com/native-ly/native-circular-status)
+# [Native Circular Status](https://github.com/native-ly/native-circular-status) (WIP)
 
 [![NPM version](https://flat.badgen.net/npm/v/native-circular-status)](https://www.npmjs.com/package/native-circular-status)
 [![NPM downloads](https://flat.badgen.net/npm/dm/native-circular-status)](https://www.npmjs.com/package/native-circular-status)
