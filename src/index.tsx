@@ -100,7 +100,7 @@ const NativeCircularStatus = ({
 
   const innerComponent = useMemo(() => {
     if (renderContent) {
-      return renderContent(progress, !!paused)
+      return renderContent(progress, paused)
     }
 
     return (
