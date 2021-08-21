@@ -15,7 +15,9 @@ Progress bar modeled on the animation from Apple Music and App Store on iOS
 ### Similar Projects
 
 - [react-native-progress](https://github.com/oblador/react-native-progress) by [Joel Arvidsson](https://github.com/oblador)
-<!-- TODO add more similar projects -->
+- [React Native Progress Circle](https://github.com/MrToph/react-native-progress-circle) by [Christoph Michel](https://github.com/MrToph)
+- [react-native-circular-progress](https://github.com/bartgryszko/react-native-circular-progress) by [Bart Gryszko](https://github.com/bartgryszko)
+- [react-native-circular-progress-indicator](https://github.com/nithinpp69/react-native-circular-progress-indicator) by [nithinpp69](https://github.com/nithinpp69)
 
 ## How to Install
 
@@ -43,27 +45,25 @@ import NativeCircularStatus from 'native-circular-status'
 
 Component extends [TouchableOpacityProps](https://reactnative.dev/docs/touchableopacity#props)
 
-<!-- TODO -->
-
-| **name**         | **type**              | **default** | **description** |
-| ---------------- | --------------------- | ----------- | --------------- |
-| progress         | number                |             |                 |
-| iconPause        |                       |             |                 |
-| iconPlay         |                       |             |                 |
-| paused           | boolean               | `false`     |                 |
-| renderContent    |                       |             |                 |
-| variant          | 'normal' or 'compact' | `normal`    |                 |
-| animated         | boolean               | `true`      |                 |
-| color            | string                | `#fb2c53`   |                 |
-| placeholderColor | string                | `#eeeeef`   |                 |
-| onPause          |                       |             |                 |
-| onPlay           |                       |             |                 |
-| onStatusChanged  |                       |             |                 |
-| thinking         | boolean               | `false`     |                 |
-| contentProps     |                       |             |                 |
-| iconProps        |                       |             |                 |
-| placeholderProps |                       |             |                 |
-| progressProps    |                       |             |                 |
+| **name**         | **type**                                               | **default** | **description** |
+| ---------------- | ------------------------------------------------------ | ----------- | --------------- |
+| progress         | number                                                 | ` `         |                 |
+| iconPause        |                                                        | `square`    |                 |
+| iconPlay         |                                                        | `pause`     |                 |
+| paused           | boolean                                                | `false`     |                 |
+| renderContent    | (progress: number, paused: boolean) => React.ReactNode | `undefined` |                 |
+| variant          | 'normal' or 'compact'                                  | `normal`    |                 |
+| animated         | boolean                                                | `true`      |                 |
+| color            | string                                                 | `#fb2c53`   |                 |
+| placeholderColor | string                                                 | `#eeeeef`   |                 |
+| onPause          | () => void                                             | `undefined` |                 |
+| onPlay           | () => void                                             | `undefined` |                 |
+| onStatusChanged  | (paused: boolean) => void                              | `undefined` |                 |
+| thinking         | boolean                                                | `false`     |                 |
+| contentProps     | ViewProps                                              | `{}`        |                 |
+| iconProps        | IconProps                                              | `{}`        |                 |
+| placeholderProps | ViewProps                                              | `{}`        |                 |
+| progressProps    | CirclePropTypes                                        | `{}`        |                 |
 
 ## Example
 
