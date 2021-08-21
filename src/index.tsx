@@ -100,7 +100,7 @@ const NativeCircularStatus = ({
 
   const innerComponent = useMemo(() => {
     if (renderContent) {
-      return renderContent(progress, paused)
+      return renderContent(progress, !!paused)
     }
 
     return (
@@ -126,6 +126,11 @@ const NativeCircularStatus = ({
 
   const isNormal = useMemo(() => variant === 'normal', [variant])
 
+  const isThinkingEnabled = useMemo(
+    () => thinking && isNormal,
+    [isNormal, thinking]
+  )
+
   return (
     <TouchableOpacity
       onPress={handlePress}
@@ -141,7 +146,6 @@ const NativeCircularStatus = ({
       ])}
       {...restContainerProps}
     >
-      {/* TODO? refactor */}
       {!thinking && isNormal && (
         <View
           style={StyleSheet.flatten([
@@ -155,8 +159,7 @@ const NativeCircularStatus = ({
         </View>
       )}
 
-      {/* TODO refactor */}
-      {!(thinking && isNormal) && (
+      {!isThinkingEnabled && (
         <View
           style={StyleSheet.flatten([
             styles.placeholder,
@@ -173,8 +176,8 @@ const NativeCircularStatus = ({
 
       <Progress.Circle
         animated={animated}
-        indeterminate={thinking && isNormal} // TODO refactor
-        borderWidth={thinking && isNormal ? PROGRESS_WIDTH : 0} // TODO refactor
+        indeterminate={isThinkingEnabled}
+        borderWidth={isThinkingEnabled ? PROGRESS_WIDTH : 0}
         borderColor={placeholderColor}
         color={color}
         progress={progress}
