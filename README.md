@@ -48,25 +48,25 @@ Component extends [TouchableOpacityProps](https://reactnative.dev/docs/touchable
 <!-- TODO update -->
 <!-- TODO add links to prop types docs -->
 
-| **name**         | **type**                                               | **default** | **description** |
-| ---------------- | ------------------------------------------------------ | ----------- | --------------- |
-| progress         | number                                                 | ` `         |                 |
-| iconPause        |                                                        | `square`    |                 |
-| iconPlay         |                                                        | `pause`     |                 |
-| paused           | boolean                                                | `false`     |                 |
-| renderContent    | (progress: number, paused: boolean) => React.ReactNode | `undefined` |                 |
-| variant          | 'normal' or 'compact'                                  | `normal`    |                 |
-| animated         | boolean                                                | `true`      |                 |
-| color            | string                                                 | `#fb2c53`   |                 |
-| placeholderColor | string                                                 | `#eeeeef`   |                 |
-| onPause          | () => void                                             | `undefined` |                 |
-| onPlay           | () => void                                             | `undefined` |                 |
-| onStatusChanged  | (paused: boolean) => void                              | `undefined` |                 |
-| thinking         | boolean                                                | `false`     |                 |
-| contentProps     | ViewProps                                              | `{}`        |                 |
-| iconProps        | IconProps                                              | `{}`        |                 |
-| placeholderProps | ViewProps                                              | `{}`        |                 |
-| progressProps    | CirclePropTypes                                        | `{}`        |                 |
+| **name**         | **type**                                                                           | **default** | **description** |
+| ---------------- | ---------------------------------------------------------------------------------- | ----------- | --------------- |
+| progress         | number                                                                             | ` `         |                 |
+| iconPause        |                                                                                    | `square`    |                 |
+| iconPlay         |                                                                                    | `pause`     |                 |
+| paused           | boolean                                                                            | `false`     |                 |
+| renderContent    | (progress: number, paused: boolean) => React.ReactNode                             | `undefined` |                 |
+| variant          | 'normal' or 'compact'                                                              | `normal`    |                 |
+| animated         | boolean                                                                            | `true`      |                 |
+| color            | string                                                                             | `#fb2c53`   |                 |
+| placeholderColor | string                                                                             | `#eeeeef`   |                 |
+| onPause          | () => void                                                                         | `undefined` |                 |
+| onPlay           | () => void                                                                         | `undefined` |                 |
+| onStatusChanged  | (paused: boolean) => void                                                          | `undefined` |                 |
+| thinking         | boolean                                                                            | `false`     |                 |
+| contentProps     | [ViewProps](https://reactnative.dev/docs/view#props)                               | `{}`        |                 |
+| iconProps        | [IconProps](https://github.com/native-ly/native-icons#icon)                        | `{}`        |                 |
+| placeholderProps | [ViewProps](https://reactnative.dev/docs/view#props)                               | `{}`        |                 |
+| progressProps    | [CirclePropTypes](https://github.com/oblador/react-native-progress#progresscircle) | `{}`        |                 |
 
 ## Example
 
