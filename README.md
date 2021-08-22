@@ -48,7 +48,7 @@ Component extends [TouchableOpacityProps](https://reactnative.dev/docs/touchable
 <!-- TODO update -->
 <!-- TODO add links to prop types docs -->
 
-| **name**         | **type**                                                                           | **default** | **description** |
+| **Name**         | **Type**                                                                           | **Default** | **Description** |
 | ---------------- | ---------------------------------------------------------------------------------- | ----------- | --------------- |
 | progress         | number                                                                             | ` `         |                 |
 | iconPause        |                                                                                    | `square`    |                 |
