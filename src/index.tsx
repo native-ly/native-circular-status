@@ -92,11 +92,10 @@ const NativeCircularStatus = ({
     }
   }, [variant])
 
-  const { style: containerStyle = {}, ...restContainerProps } = containerProps
-  const { style: contentStyle = {}, ...restContentProps } = contentProps
-  const { style: iconStyle = {}, ...restIconProps } = iconProps
-  const { style: placeholderStyle = {}, ...restPlaceholderProps } =
-    placeholderProps
+  const { style: containerStyle = {}, ...containerRest } = containerProps
+  const { style: contentStyle = {}, ...contentRest } = contentProps
+  const { style: iconStyle = {}, ...iconRest } = iconProps
+  const { style: placeholderStyle = {}, ...placeholderRest } = placeholderProps
 
   const innerComponent = useMemo(() => {
     if (renderContent) {
@@ -110,7 +109,7 @@ const NativeCircularStatus = ({
         color={color}
         name={paused ? iconPlay : iconPause}
         style={StyleSheet.flatten([{ paddingLeft: 1 }, iconStyle])}
-        {...restIconProps}
+        {...iconRest}
       />
     )
   }, [
@@ -121,7 +120,7 @@ const NativeCircularStatus = ({
     paused,
     progress,
     renderContent,
-    restIconProps,
+    iconRest,
   ])
 
   const isNormal = useMemo(() => variant === 'normal', [variant])
@@ -144,7 +143,7 @@ const NativeCircularStatus = ({
         disabled ? styles.containerDisabled : {},
         containerStyle,
       ])}
-      {...restContainerProps}
+      {...containerRest}
     >
       {!thinking && isNormal && (
         <View
@@ -153,7 +152,7 @@ const NativeCircularStatus = ({
             styles.absoluteElement,
             contentStyle,
           ])}
-          {...restContentProps}
+          {...contentRest}
         >
           {innerComponent}
         </View>
@@ -170,7 +169,7 @@ const NativeCircularStatus = ({
             },
             placeholderStyle,
           ])}
-          {...restPlaceholderProps}
+          {...placeholderRest}
         />
       )}
 
