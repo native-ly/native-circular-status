@@ -1,0 +1,2294 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NativeCircularStatus should render component 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 28,
+      "opacity": 1,
+      "position": "relative",
+      "width": 28,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": "100%",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "borderColor": "#efefef",
+        "borderRadius": 14,
+        "borderWidth": 2,
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={28}
+      bbWidth={28}
+      focusable={false}
+      height={28}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 28,
+            "width": 28,
+          },
+        ]
+      }
+      width={28}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M14 1
+          A13 13 0 0 1 14 1"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4294650963}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 0 compact 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 12,
+      "opacity": 1,
+      "position": "relative",
+      "width": 12,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderColor": "#efefef",
+        "borderRadius": 6,
+        "borderWidth": 2,
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={12}
+      bbWidth={12}
+      focusable={false}
+      height={12}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 12,
+            "width": 12,
+          },
+        ]
+      }
+      width={12}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M6 1
+          A5 5 0 0 1 6 1"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4294650963}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 0 compact disabled 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 12,
+      "opacity": 0.5,
+      "position": "relative",
+      "width": 12,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderColor": "#efefef",
+        "borderRadius": 6,
+        "borderWidth": 2,
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={12}
+      bbWidth={12}
+      focusable={false}
+      height={12}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 12,
+            "width": 12,
+          },
+        ]
+      }
+      width={12}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M6 1
+          A5 5 0 0 1 6 1"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4294650963}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 0 compact thinking 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 12,
+      "opacity": 1,
+      "position": "relative",
+      "width": 12,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderColor": "#efefef",
+        "borderRadius": 6,
+        "borderWidth": 2,
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={12}
+      bbWidth={12}
+      focusable={false}
+      height={12}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 12,
+            "width": 12,
+          },
+        ]
+      }
+      width={12}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M6 1
+          A5 5 0 0 1 6 1"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4294650963}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 0 normal disabled 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 28,
+      "opacity": 0.5,
+      "position": "relative",
+      "width": 28,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": "100%",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "borderColor": "#efefef",
+        "borderRadius": 14,
+        "borderWidth": 2,
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={28}
+      bbWidth={28}
+      focusable={false}
+      height={28}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 28,
+            "width": 28,
+          },
+        ]
+      }
+      width={28}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M14 1
+          A13 13 0 0 1 14 1"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4294650963}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 0 normal renderContent 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 28,
+      "opacity": 1,
+      "position": "relative",
+      "width": 28,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": "100%",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "borderColor": "#efefef",
+        "borderRadius": 14,
+        "borderWidth": 2,
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={28}
+      bbWidth={28}
+      focusable={false}
+      height={28}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 28,
+            "width": 28,
+          },
+        ]
+      }
+      width={28}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M14 1
+          A13 13 0 0 1 14 1"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4294650963}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 0 normal thinking 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 28,
+      "opacity": 1,
+      "position": "relative",
+      "width": 28,
+    }
+  }
+>
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={28}
+      bbWidth={28}
+      focusable={false}
+      height={28}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "transform": Array [
+              Object {
+                "rotate": "0deg",
+              },
+            ],
+          },
+          Object {
+            "flex": 0,
+            "height": 28,
+            "width": 28,
+          },
+        ]
+      }
+      width={28}
+    >
+      <RNSVGGroup
+        matrix={
+          Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ]
+        }
+      >
+        <RNSVGPath
+          d="M14 1
+          A13 13 0 1 1 6.358791720197846 3.482779073125684"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4293914607}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 0 should render component 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 28,
+      "opacity": 1,
+      "position": "relative",
+      "width": 28,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": "100%",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "borderColor": "#efefef",
+        "borderRadius": 14,
+        "borderWidth": 2,
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={28}
+      bbWidth={28}
+      focusable={false}
+      height={28}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 28,
+            "width": 28,
+          },
+        ]
+      }
+      width={28}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M14 1
+          A13 13 0 0 1 14 1"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4294650963}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 0 should render component 2`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 28,
+      "opacity": 1,
+      "position": "relative",
+      "width": 28,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": "100%",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "borderColor": "#efefef",
+        "borderRadius": 14,
+        "borderWidth": 2,
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={28}
+      bbWidth={28}
+      focusable={false}
+      height={28}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 28,
+            "width": 28,
+          },
+        ]
+      }
+      width={28}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M14 1
+          A13 13 0 0 1 14 1"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4294650963}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 0.4 compact 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 12,
+      "opacity": 1,
+      "position": "relative",
+      "width": 12,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderColor": "#efefef",
+        "borderRadius": 6,
+        "borderWidth": 2,
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={12}
+      bbWidth={12}
+      focusable={false}
+      height={12}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 12,
+            "width": 12,
+          },
+        ]
+      }
+      width={12}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M6 1
+          A5 5 0 0 1 8.938926261462367 10.045084971874736"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4294650963}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 0.4 compact disabled 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 12,
+      "opacity": 0.5,
+      "position": "relative",
+      "width": 12,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderColor": "#efefef",
+        "borderRadius": 6,
+        "borderWidth": 2,
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={12}
+      bbWidth={12}
+      focusable={false}
+      height={12}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 12,
+            "width": 12,
+          },
+        ]
+      }
+      width={12}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M6 1
+          A5 5 0 0 1 8.938926261462367 10.045084971874736"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4294650963}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 0.4 compact thinking 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 12,
+      "opacity": 1,
+      "position": "relative",
+      "width": 12,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderColor": "#efefef",
+        "borderRadius": 6,
+        "borderWidth": 2,
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={12}
+      bbWidth={12}
+      focusable={false}
+      height={12}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 12,
+            "width": 12,
+          },
+        ]
+      }
+      width={12}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M6 1
+          A5 5 0 0 1 8.938926261462367 10.045084971874736"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4294650963}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 0.4 normal disabled 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 28,
+      "opacity": 0.5,
+      "position": "relative",
+      "width": 28,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": "100%",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "borderColor": "#efefef",
+        "borderRadius": 14,
+        "borderWidth": 2,
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={28}
+      bbWidth={28}
+      focusable={false}
+      height={28}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 28,
+            "width": 28,
+          },
+        ]
+      }
+      width={28}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M14 1
+          A13 13 0 0 1 21.641208279802154 24.517220926874316"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4294650963}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 0.4 normal renderContent 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 28,
+      "opacity": 1,
+      "position": "relative",
+      "width": 28,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": "100%",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "borderColor": "#efefef",
+        "borderRadius": 14,
+        "borderWidth": 2,
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={28}
+      bbWidth={28}
+      focusable={false}
+      height={28}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 28,
+            "width": 28,
+          },
+        ]
+      }
+      width={28}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M14 1
+          A13 13 0 0 1 21.641208279802154 24.517220926874316"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4294650963}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 0.4 normal thinking 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 28,
+      "opacity": 1,
+      "position": "relative",
+      "width": 28,
+    }
+  }
+>
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={28}
+      bbWidth={28}
+      focusable={false}
+      height={28}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "transform": Array [
+              Object {
+                "rotate": "0deg",
+              },
+            ],
+          },
+          Object {
+            "flex": 0,
+            "height": 28,
+            "width": 28,
+          },
+        ]
+      }
+      width={28}
+    >
+      <RNSVGGroup
+        matrix={
+          Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ]
+        }
+      >
+        <RNSVGPath
+          d="M14 1
+          A13 13 0 1 1 6.358791720197846 3.482779073125684"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4293914607}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 0.4 should render component 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 28,
+      "opacity": 1,
+      "position": "relative",
+      "width": 28,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": "100%",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "borderColor": "#efefef",
+        "borderRadius": 14,
+        "borderWidth": 2,
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={28}
+      bbWidth={28}
+      focusable={false}
+      height={28}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 28,
+            "width": 28,
+          },
+        ]
+      }
+      width={28}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M14 1
+          A13 13 0 0 1 21.641208279802154 24.517220926874316"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4294650963}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 0.4 should render component 2`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 28,
+      "opacity": 1,
+      "position": "relative",
+      "width": 28,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": "100%",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "borderColor": "#efefef",
+        "borderRadius": 14,
+        "borderWidth": 2,
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={28}
+      bbWidth={28}
+      focusable={false}
+      height={28}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 28,
+            "width": 28,
+          },
+        ]
+      }
+      width={28}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M14 1
+          A13 13 0 0 1 21.641208279802154 24.517220926874316"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4294650963}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 1 compact 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 12,
+      "opacity": 1,
+      "position": "relative",
+      "width": 12,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderColor": "#efefef",
+        "borderRadius": 6,
+        "borderWidth": 2,
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={12}
+      bbWidth={12}
+      focusable={false}
+      height={12}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 12,
+            "width": 12,
+          },
+        ]
+      }
+      width={12}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M6 1
+            a5 5 0 0 1 0 10
+            a5 5 0 0 1 0 -10"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4294650963}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 1 compact disabled 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 12,
+      "opacity": 0.5,
+      "position": "relative",
+      "width": 12,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderColor": "#efefef",
+        "borderRadius": 6,
+        "borderWidth": 2,
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={12}
+      bbWidth={12}
+      focusable={false}
+      height={12}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 12,
+            "width": 12,
+          },
+        ]
+      }
+      width={12}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M6 1
+            a5 5 0 0 1 0 10
+            a5 5 0 0 1 0 -10"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4294650963}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 1 compact thinking 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 12,
+      "opacity": 1,
+      "position": "relative",
+      "width": 12,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "borderColor": "#efefef",
+        "borderRadius": 6,
+        "borderWidth": 2,
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={12}
+      bbWidth={12}
+      focusable={false}
+      height={12}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 12,
+            "width": 12,
+          },
+        ]
+      }
+      width={12}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M6 1
+            a5 5 0 0 1 0 10
+            a5 5 0 0 1 0 -10"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4294650963}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 1 normal disabled 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 28,
+      "opacity": 0.5,
+      "position": "relative",
+      "width": 28,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": "100%",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "borderColor": "#efefef",
+        "borderRadius": 14,
+        "borderWidth": 2,
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={28}
+      bbWidth={28}
+      focusable={false}
+      height={28}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 28,
+            "width": 28,
+          },
+        ]
+      }
+      width={28}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M14 1
+            a13 13 0 0 1 0 26
+            a13 13 0 0 1 0 -26"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4294650963}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 1 normal renderContent 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 28,
+      "opacity": 1,
+      "position": "relative",
+      "width": 28,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": "100%",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "borderColor": "#efefef",
+        "borderRadius": 14,
+        "borderWidth": 2,
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={28}
+      bbWidth={28}
+      focusable={false}
+      height={28}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 28,
+            "width": 28,
+          },
+        ]
+      }
+      width={28}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M14 1
+            a13 13 0 0 1 0 26
+            a13 13 0 0 1 0 -26"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4294650963}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 1 normal thinking 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 28,
+      "opacity": 1,
+      "position": "relative",
+      "width": 28,
+    }
+  }
+>
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={28}
+      bbWidth={28}
+      focusable={false}
+      height={28}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "transform": Array [
+              Object {
+                "rotate": "0deg",
+              },
+            ],
+          },
+          Object {
+            "flex": 0,
+            "height": 28,
+            "width": 28,
+          },
+        ]
+      }
+      width={28}
+    >
+      <RNSVGGroup
+        matrix={
+          Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ]
+        }
+      >
+        <RNSVGPath
+          d="M14 1
+          A13 13 0 1 1 6.358791720197846 3.482779073125684"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4293914607}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 1 should render component 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 28,
+      "opacity": 1,
+      "position": "relative",
+      "width": 28,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": "100%",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "borderColor": "#efefef",
+        "borderRadius": 14,
+        "borderWidth": 2,
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={28}
+      bbWidth={28}
+      focusable={false}
+      height={28}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 28,
+            "width": 28,
+          },
+        ]
+      }
+      width={28}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M14 1
+            a13 13 0 0 1 0 26
+            a13 13 0 0 1 0 -26"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4294650963}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;
+
+exports[`NativeCircularStatus with progress 1 should render component 2`] = `
+<View
+  accessible={true}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "height": 28,
+      "opacity": 1,
+      "position": "relative",
+      "width": 28,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": "100%",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "borderColor": "#efefef",
+        "borderRadius": 14,
+        "borderWidth": 2,
+        "height": "100%",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    indeterminateAnimationDuration={1000}
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNSVGSvgView
+      bbHeight={28}
+      bbWidth={28}
+      focusable={false}
+      height={28}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "borderWidth": 0,
+          },
+          Object {
+            "flex": 0,
+            "height": 28,
+            "width": 28,
+          },
+        ]
+      }
+      width={28}
+    >
+      <RNSVGGroup>
+        <RNSVGPath
+          d="M14 1
+            a13 13 0 0 1 0 26
+            a13 13 0 0 1 0 -26"
+          propList={
+            Array [
+              "stroke",
+              "strokeWidth",
+              "strokeLinecap",
+            ]
+          }
+          stroke={4294650963}
+          strokeLinecap={0}
+          strokeWidth={2}
+        />
+      </RNSVGGroup>
+    </RNSVGSvgView>
+  </View>
+</View>
+`;

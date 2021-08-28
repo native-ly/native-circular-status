@@ -1,5 +1,6 @@
-import Icon from 'native-icons'
-import React, { useCallback, useMemo } from 'react'
+// import Icon from 'native-icons'
+import React, { useCallback, useMemo, useState } from 'react'
+import { useEffect } from 'react'
 import {
   TouchableOpacity,
   StyleSheet,
@@ -50,7 +51,7 @@ const NativeCircularStatus = ({
   progress,
   iconPause = DEFAULTS.ICON_PAUSE,
   iconPlay = DEFAULTS.ICON_PLAY,
-  paused = false,
+  paused,
   renderContent,
   variant = 'normal',
   animated = true,
@@ -67,6 +68,14 @@ const NativeCircularStatus = ({
   progressProps = {},
   ...containerProps
 }: NativeCircularStatusProps) => {
+  const [isLocalPaused, setIsLocalPaused] = useState(false)
+
+  useEffect(() => {
+    if (paused !== undefined) {
+      setIsLocalPaused(paused)
+    }
+  }, [paused])
+
   const handlePress = useCallback(() => {
     if (thinking) {
       return
@@ -97,31 +106,31 @@ const NativeCircularStatus = ({
   const { style: iconStyle = {}, ...iconRest } = iconProps
   const { style: placeholderStyle = {}, ...placeholderRest } = placeholderProps
 
-  const innerComponent = useMemo(() => {
-    if (renderContent) {
-      return renderContent(progress, !!paused)
-    }
+  // const innerComponent = useMemo(() => {
+  //   if (renderContent) {
+  //     return renderContent(progress, !!paused)
+  //   }
 
-    return (
-      <Icon
-        type="ionicons"
-        size={10}
-        color={color}
-        name={paused ? iconPlay : iconPause}
-        style={StyleSheet.flatten([{ paddingLeft: 1 }, iconStyle])}
-        {...iconRest}
-      />
-    )
-  }, [
-    color,
-    iconPause,
-    iconPlay,
-    iconStyle,
-    paused,
-    progress,
-    renderContent,
-    iconRest,
-  ])
+  //   return (
+  //     <Icon
+  //       type="ionicons"
+  //       size={10}
+  //       color={color}
+  //       name={paused ? iconPlay : iconPause}
+  //       style={StyleSheet.flatten([{ paddingLeft: 1 }, iconStyle])}
+  //       {...iconRest}
+  //     />
+  //   )
+  // }, [
+  //   color,
+  //   iconPause,
+  //   iconPlay,
+  //   iconStyle,
+  //   paused,
+  //   progress,
+  //   renderContent,
+  //   iconRest,
+  // ])
 
   const isNormal = useMemo(() => variant === 'normal', [variant])
 
@@ -154,7 +163,7 @@ const NativeCircularStatus = ({
           ])}
           {...contentRest}
         >
-          {innerComponent}
+          {/* {innerComponent} */}
         </View>
       )}
 
