@@ -30,6 +30,7 @@ interface NativeCircularStatusProps extends TouchableOpacityProps {
   readonly progress: number
   readonly iconPause?: string
   readonly iconPlay?: string
+  readonly iconThinking?: string
   readonly paused?: boolean
   renderContent?: (progress: number, paused: boolean) => React.ReactNode
   readonly variant?: Variant
@@ -50,6 +51,7 @@ const NativeCircularStatus = ({
   progress,
   iconPause = DEFAULTS.ICON_PAUSE,
   iconPlay = DEFAULTS.ICON_PLAY,
+  iconThinking,
   paused = false,
   renderContent,
   variant = 'normal',
@@ -102,25 +104,31 @@ const NativeCircularStatus = ({
       return renderContent(progress, !!paused)
     }
 
+    if (thinking && !iconThinking) {
+      return
+    }
+
     return (
       <Icon
         type="ionicons"
         size={10}
         color={color}
-        name={paused ? iconPlay : iconPause}
+        name={thinking ? iconThinking : paused ? iconPlay : iconPause}
         style={StyleSheet.flatten([{ paddingLeft: 1 }, iconStyle])}
         {...iconRest}
       />
     )
   }, [
-    color,
-    iconPause,
-    iconPlay,
-    iconStyle,
-    paused,
-    progress,
     renderContent,
+    thinking,
+    iconThinking,
+    color,
+    paused,
+    iconPlay,
+    iconPause,
+    iconStyle,
     iconRest,
+    progress,
   ])
 
   const isNormal = useMemo(() => variant === 'normal', [variant])
@@ -145,7 +153,7 @@ const NativeCircularStatus = ({
       ])}
       {...containerRest}
     >
-      {!thinking && isNormal && (
+      {isNormal && (
         <View
           style={StyleSheet.flatten([
             styles.content,
