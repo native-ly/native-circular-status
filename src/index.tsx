@@ -7,7 +7,7 @@ import {
   ViewProps,
   TouchableOpacityProps,
 } from 'react-native'
-import * as Progress from 'react-native-progress'
+import Svg, { Path, Circle } from 'react-native-svg'
 import type { IconProps } from 'react-native-vector-icons/Icon'
 
 const DEFAULTS = {
@@ -43,7 +43,7 @@ interface NativeCircularStatusProps extends TouchableOpacityProps {
   readonly contentProps?: ViewProps
   readonly iconProps?: Partial<IconProps>
   readonly placeholderProps?: ViewProps
-  readonly progressProps?: Progress.CirclePropTypes
+  readonly progressProps?: any
 }
 
 const NativeCircularStatus = ({
@@ -173,7 +173,25 @@ const NativeCircularStatus = ({
         />
       )}
 
-      <Progress.Circle
+      {/* https://stackoverflow.com/questions/60725607/rounded-corners-for-arc-progress-in-react-native-svg */}
+      {/* <Svg width={size} height={size}> */}
+      {/* <Circle cx={half} cy={half} r={half} fill={blankColor}/>
+            <Path
+                d={`M${half} ${half} L${half} 0 ${generateArc(percentage, half)} Z`}
+                fill={donutColor}
+            />
+            <Circle cx={half} cy={half} r={progressWidth} fill={fillColor}/> */}
+
+      {/* <Path
+              stroke="black"
+              fill="none"
+              strokeLinecap="round"
+              strokeDasharray={`${circumference}, ${circumference}`}
+              {...{d, strokeWidth}}
+            /> */}
+      {/* </Svg> */}
+
+      {/* <Progress.Circle
         animated={animated}
         indeterminate={isThinkingEnabled}
         borderWidth={isThinkingEnabled ? PROGRESS_WIDTH : 0}
@@ -183,7 +201,7 @@ const NativeCircularStatus = ({
         size={size}
         thickness={PROGRESS_WIDTH}
         {...progressProps}
-      />
+      /> */}
     </TouchableOpacity>
   )
 }
