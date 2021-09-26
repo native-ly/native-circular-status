@@ -26,12 +26,17 @@ const SIZES = {
 
 type Variant = 'normal' | 'compact'
 
+interface RenderContentParams {
+  readonly progress: number
+  readonly paused: boolean
+}
+
 interface NativeCircularStatusProps extends TouchableOpacityProps {
   readonly progress: number
   readonly iconPause?: string
   readonly iconPlay?: string
   readonly paused?: boolean
-  renderContent?: (progress: number, paused: boolean) => React.ReactNode
+  renderContent?: ({ progress, paused }: RenderContentParams) => React.ReactNode
   readonly variant?: Variant
   readonly animated?: boolean
   readonly color?: string
@@ -99,7 +104,7 @@ const NativeCircularStatus = ({
 
   const innerComponent = useMemo(() => {
     if (renderContent) {
-      return renderContent(progress, !!paused)
+      return renderContent({ progress, paused: !!paused })
     }
 
     return (
