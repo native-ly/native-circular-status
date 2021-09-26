@@ -201,6 +201,7 @@ const NativeCircularStatus = ({
         progress={progress}
         size={size}
         thickness={PROGRESS_WIDTH}
+        fill="#00000000" // TODO remove when https://github.com/oblador/react-native-progress/issues/234 is fixed
         strokeCap="round"
         {...progressProps}
       />
