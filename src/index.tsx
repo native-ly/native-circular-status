@@ -108,7 +108,8 @@ const NativeCircularStatus = ({
         size={10}
         color={color}
         name={paused ? iconPlay : iconPause}
-        style={StyleSheet.flatten([{ paddingLeft: 1 }, iconStyle])}
+        // style={StyleSheet.flatten([{ paddingLeft: 1 }, iconStyle])}
+        style={iconStyle}
         {...iconRest}
       />
     )
