@@ -201,6 +201,7 @@ const NativeCircularStatus = ({
         progress={progress}
         size={size}
         thickness={PROGRESS_WIDTH}
+        strokeCap="round"
         {...progressProps}
       />
     </TouchableOpacity>
