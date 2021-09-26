@@ -1,5 +1,5 @@
 import Icon from 'native-icons'
-import React, { useCallback, useMemo } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import {
   TouchableOpacity,
   StyleSheet,
@@ -55,7 +55,7 @@ const NativeCircularStatus = ({
   progress,
   iconPause = DEFAULTS.ICON_PAUSE,
   iconPlay = DEFAULTS.ICON_PLAY,
-  paused = false,
+  paused,
   renderContent,
   variant = 'normal',
   animated = true,
@@ -72,19 +72,33 @@ const NativeCircularStatus = ({
   progressProps = {},
   ...containerProps
 }: NativeCircularStatusProps) => {
+  const [isLocalPaused, setIsLocalPaused] = useState(false)
+
+  useEffect(() => {
+    if (paused !== undefined) {
+      setIsLocalPaused(paused)
+    }
+  }, [paused])
+
   const handlePress = useCallback(() => {
     if (thinking) {
       return
     }
 
-    if (paused) {
-      onPlay?.()
-    } else {
-      onPause?.()
-    }
+    setIsLocalPaused((prevState) => {
+      const updatedState = !prevState
 
-    onStatusChanged?.(!paused)
-  }, [onPause, onPlay, onStatusChanged, paused, thinking])
+      if (prevState) {
+        onPlay?.()
+      } else {
+        onPause?.()
+      }
+
+      onStatusChanged?.(updatedState)
+
+      return updatedState
+    })
+  }, [onPause, onPlay, onStatusChanged, thinking])
 
   const size = useMemo(() => {
     switch (variant) {
@@ -104,7 +118,7 @@ const NativeCircularStatus = ({
 
   const innerComponent = useMemo(() => {
     if (renderContent) {
-      return renderContent({ progress, paused: !!paused })
+      return renderContent({ progress, paused: isLocalPaused })
     }
 
     return (
@@ -112,7 +126,7 @@ const NativeCircularStatus = ({
         type="ionicons"
         size={10}
         color={color}
-        name={paused ? iconPlay : iconPause}
+        name={isLocalPaused ? iconPlay : iconPause}
         style={StyleSheet.flatten([{ paddingLeft: 1 }, iconStyle])}
         {...iconRest}
       />
@@ -122,7 +136,7 @@ const NativeCircularStatus = ({
     iconPause,
     iconPlay,
     iconStyle,
-    paused,
+    isLocalPaused,
     progress,
     renderContent,
     iconRest,
