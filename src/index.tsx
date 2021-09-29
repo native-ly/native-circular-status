@@ -12,63 +12,81 @@ import type { IconProps } from 'react-native-vector-icons/Icon'
 
 const DEFAULTS = {
   ICON_PAUSE: 'square',
-  ICON_PLAY: 'pause',
-  COLOR: '#fb2c53',
-  PLACEHOLDER_COLOR: '#efefef',
+  COLOR_PRIMARY: '#fb2c53',
+  COLOR_SECONDARY: '#efefef',
 }
 
 const PROGRESS_WIDTH = 2
+const ICON_SIZE = 10
 
 const SIZES = {
   COMPACT: 12,
   NORMAL: 28,
 }
 
-type Variant = 'normal' | 'compact'
-
 interface RenderContentParams {
   readonly progress: number
-  readonly paused: boolean
+  readonly paused?: boolean
+  readonly thinking?: boolean
 }
 
-interface NativeCircularStatusProps extends TouchableOpacityProps {
-  readonly progress: number
-  readonly iconPause?: string
-  readonly iconPlay?: string
-  readonly paused?: boolean
-  renderContent?: ({ progress, paused }: RenderContentParams) => React.ReactNode
-  readonly variant?: Variant
+interface BaseProps
+  extends TouchableOpacityProps,
+    Omit<RenderContentParams, 'progress' | 'paused'> {
   readonly animated?: boolean
-  readonly color?: string
-  readonly placeholderColor?: string
-  onPause?: () => void
-  onPlay?: () => void
-  onStatusChanged?: (paused: boolean) => void
-  readonly thinking?: boolean
-  readonly contentProps?: ViewProps
-  readonly iconProps?: Partial<IconProps>
-  readonly placeholderProps?: ViewProps
+  readonly strokeRound?: boolean
+  readonly colorPrimary?: string
+  readonly colorSecondary?: string
   readonly progressProps?: Progress.CirclePropTypes
 }
 
+interface NormalProps extends BaseProps, Pick<RenderContentParams, 'thinking'> {
+  readonly variant: 'normal'
+  readonly iconPause?: string
+  readonly iconPlay?: string
+  readonly iconThinking?: string
+  readonly icon?: string
+  renderContent?: ({
+    progress,
+    paused,
+    thinking,
+  }: Required<RenderContentParams>) => React.ReactNode
+  onPause?: (thinking: boolean) => void
+  onPlay?: (thinking: boolean) => void
+  onStatusChanged?: ({
+    paused,
+    thinking,
+  }: Required<Omit<RenderContentParams, 'progress'>>) => void
+  readonly contentProps?: ViewProps
+  readonly iconProps?: Partial<IconProps>
+}
+
+interface CompactProps extends BaseProps {
+  readonly variant: 'compact'
+}
+
+type NativeCircularStatusProps = NormalProps | CompactProps
+
 const NativeCircularStatus = ({
-  progress,
-  iconPause = DEFAULTS.ICON_PAUSE,
-  iconPlay = DEFAULTS.ICON_PLAY,
-  paused,
-  renderContent,
+  // progress,
+  // iconPause = DEFAULTS.ICON_PAUSE,
+  // iconPlay,
+  // iconThinking,
+  // icon,
+  // paused,
+  // renderContent,
   variant = 'normal',
   animated = true,
-  color = DEFAULTS.COLOR,
-  placeholderColor = DEFAULTS.PLACEHOLDER_COLOR,
-  onPause,
-  onPlay,
-  onStatusChanged,
+  strokeRound = true,
+  colorPrimary = DEFAULTS.COLOR_PRIMARY,
+  colorSecondary = DEFAULTS.COLOR_SECONDARY,
+  // onPause,
+  // onPlay,
+  // onStatusChanged,
   thinking = false,
   disabled,
-  contentProps = {},
-  iconProps = {},
-  placeholderProps = {},
+  // contentProps = {},
+  // iconProps = {},
   progressProps = {},
   ...containerProps
 }: NativeCircularStatusProps) => {
@@ -81,20 +99,16 @@ const NativeCircularStatus = ({
   }, [paused])
 
   const handlePress = useCallback(() => {
-    if (thinking) {
-      return
-    }
-
     setIsLocalPaused((prevState) => {
-      const updatedState = !prevState
+      const updatedState = thinking ? prevState : !prevState
 
       if (prevState) {
-        onPlay?.()
+        onPlay?.(thinking)
       } else {
-        onPause?.()
+        onPause?.(thinking)
       }
 
-      onStatusChanged?.(updatedState)
+      onStatusChanged?.({ paused: updatedState, thinking })
 
       return updatedState
     })
@@ -114,32 +128,46 @@ const NativeCircularStatus = ({
   const { style: containerStyle = {}, ...containerRest } = containerProps
   const { style: contentStyle = {}, ...contentRest } = contentProps
   const { style: iconStyle = {}, ...iconRest } = iconProps
-  const { style: placeholderStyle = {}, ...placeholderRest } = placeholderProps
 
   const innerComponent = useMemo(() => {
     if (renderContent) {
-      return renderContent({ progress, paused: isLocalPaused })
+      return renderContent({ progress, paused: isLocalPaused, thinking })
+    }
+
+    if (thinking && !iconThinking && !icon) {
+      return null
+    }
+
+    if (isLocalPaused && !iconPlay && !icon) {
+      return null
+    }
+
+    if (!isLocalPaused && !iconPause && !icon) {
+      return null
     }
 
     return (
       <Icon
         type="ionicons"
-        size={10}
-        color={color}
+        size={ICON_SIZE}
+        color={colorPrimary}
         name={isLocalPaused ? iconPlay : iconPause}
-        style={StyleSheet.flatten([{ paddingLeft: 1 }, iconStyle])}
+        style={StyleSheet.flatten([styles.icon, iconStyle])}
         {...iconRest}
       />
     )
   }, [
-    color,
-    iconPause,
-    iconPlay,
-    iconStyle,
-    isLocalPaused,
-    progress,
     renderContent,
+    thinking,
+    iconThinking,
+    icon,
+    isLocalPaused,
+    iconPlay,
+    iconPause,
+    colorPrimary,
+    iconStyle,
     iconRest,
+    progress,
   ])
 
   const isNormal = useMemo(() => variant === 'normal', [variant])
@@ -164,7 +192,7 @@ const NativeCircularStatus = ({
       ])}
       {...containerRest}
     >
-      {!thinking && isNormal && (
+      {(!thinking || (thinking && iconThinking)) && isNormal && (
         <View
           style={StyleSheet.flatten([
             styles.content,
@@ -177,32 +205,18 @@ const NativeCircularStatus = ({
         </View>
       )}
 
-      {!isThinkingEnabled && (
-        <View
-          style={StyleSheet.flatten([
-            styles.placeholder,
-            styles.absoluteElement,
-            {
-              borderRadius: size / 2,
-              borderColor: placeholderColor,
-            },
-            placeholderStyle,
-          ])}
-          {...placeholderRest}
-        />
-      )}
-
       <Progress.Circle
         animated={animated}
         indeterminate={isThinkingEnabled}
         borderWidth={isThinkingEnabled ? PROGRESS_WIDTH : 0}
-        borderColor={placeholderColor}
-        color={color}
+        borderColor={colorSecondary}
+        unfilledColor={isThinkingEnabled ? undefined : colorSecondary}
+        color={colorPrimary}
         progress={progress}
         size={size}
         thickness={PROGRESS_WIDTH}
         fill="#00000000" // TODO remove when https://github.com/oblador/react-native-progress/issues/234 is fixed
-        strokeCap="round"
+        strokeCap={strokeRound ? 'round' : 'butt'}
         {...progressProps}
       />
     </TouchableOpacity>
@@ -220,13 +234,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  placeholder: {
-    borderWidth: PROGRESS_WIDTH,
-  },
   absoluteElement: {
     position: 'absolute',
     width: '100%',
     height: '100%',
+  },
+  // TODO update or remove when https://github.com/oblador/react-native-vector-icons/issues/638#issuecomment-411349336 is fixed
+  icon: {
+    height: ICON_SIZE,
+    width: ICON_SIZE,
+    lineHeight: ICON_SIZE,
+    textAlign: 'center',
   },
 })
 
