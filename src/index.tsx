@@ -24,33 +24,27 @@ const SIZES = {
   NORMAL: 28,
 }
 
+type Variant = 'normal' | 'compact'
+
 interface RenderContentParams {
   readonly progress: number
   readonly paused?: boolean
   readonly thinking?: boolean
 }
 
-interface BaseProps
-  extends TouchableOpacityProps,
-    Omit<RenderContentParams, 'progress' | 'paused'> {
-  readonly animated?: boolean
-  readonly strokeRound?: boolean
-  readonly colorPrimary?: string
-  readonly colorSecondary?: string
-  readonly progressProps?: Progress.CirclePropTypes
-}
-
-interface NormalProps extends BaseProps, Pick<RenderContentParams, 'thinking'> {
-  readonly variant: 'normal'
+interface NativeCircularStatusProps
+  extends RenderContentParams,
+    TouchableOpacityProps {
   readonly iconPause?: string
   readonly iconPlay?: string
   readonly iconThinking?: string
   readonly icon?: string
-  renderContent?: ({
-    progress,
-    paused,
-    thinking,
-  }: Required<RenderContentParams>) => React.ReactNode
+  renderContent?: ({ progress, paused }: RenderContentParams) => React.ReactNode
+  readonly variant?: Variant
+  readonly animated?: boolean
+  readonly strokeRound?: boolean
+  readonly colorPrimary?: string
+  readonly colorSecondary?: string
   onPause?: (thinking: boolean) => void
   onPlay?: (thinking: boolean) => void
   onStatusChanged?: ({
@@ -59,34 +53,30 @@ interface NormalProps extends BaseProps, Pick<RenderContentParams, 'thinking'> {
   }: Required<Omit<RenderContentParams, 'progress'>>) => void
   readonly contentProps?: ViewProps
   readonly iconProps?: Partial<IconProps>
+  readonly placeholderProps?: ViewProps
+  readonly progressProps?: Progress.CirclePropTypes
 }
-
-interface CompactProps extends BaseProps {
-  readonly variant: 'compact'
-}
-
-type NativeCircularStatusProps = NormalProps | CompactProps
 
 const NativeCircularStatus = ({
-  // progress,
-  // iconPause = DEFAULTS.ICON_PAUSE,
-  // iconPlay,
-  // iconThinking,
-  // icon,
-  // paused,
-  // renderContent,
+  progress,
+  iconPause = DEFAULTS.ICON_PAUSE,
+  iconPlay,
+  iconThinking,
+  icon,
+  paused,
+  renderContent,
   variant = 'normal',
   animated = true,
   strokeRound = true,
   colorPrimary = DEFAULTS.COLOR_PRIMARY,
   colorSecondary = DEFAULTS.COLOR_SECONDARY,
-  // onPause,
-  // onPlay,
-  // onStatusChanged,
+  onPause,
+  onPlay,
+  onStatusChanged,
   thinking = false,
   disabled,
-  // contentProps = {},
-  // iconProps = {},
+  contentProps = {},
+  iconProps = {},
   progressProps = {},
   ...containerProps
 }: NativeCircularStatusProps) => {
