@@ -40,7 +40,7 @@ interface BaseProps
   readonly progressProps?: Progress.CirclePropTypes
 }
 
-interface NormalProps extends BaseProps, Pick<RenderContentParams, 'thinking'> {
+interface NormalProps extends BaseProps, RenderContentParams {
   readonly variant: 'normal'
   readonly iconPause?: string
   readonly iconPlay?: string
@@ -68,51 +68,47 @@ interface CompactProps extends BaseProps {
 type NativeCircularStatusProps = NormalProps | CompactProps
 
 const NativeCircularStatus = ({
-  // progress,
-  // iconPause = DEFAULTS.ICON_PAUSE,
-  // iconPlay,
-  // iconThinking,
-  // icon,
-  // paused,
-  // renderContent,
   variant = 'normal',
   animated = true,
   strokeRound = true,
   colorPrimary = DEFAULTS.COLOR_PRIMARY,
   colorSecondary = DEFAULTS.COLOR_SECONDARY,
-  // onPause,
-  // onPlay,
-  // onStatusChanged,
   thinking = false,
   disabled,
-  // contentProps = {},
-  // iconProps = {},
   progressProps = {},
   ...containerProps
 }: NativeCircularStatusProps) => {
   const [isLocalPaused, setIsLocalPaused] = useState(false)
 
   useEffect(() => {
-    if (paused !== undefined) {
-      setIsLocalPaused(paused)
+    if ('paused' in containerProps) {
+      if (containerProps.paused !== undefined) {
+        setIsLocalPaused(containerProps.paused)
+      }
     }
-  }, [paused])
+  }, [containerProps])
 
   const handlePress = useCallback(() => {
     setIsLocalPaused((prevState) => {
       const updatedState = thinking ? prevState : !prevState
 
       if (prevState) {
-        onPlay?.(thinking)
+        if ('onPlay' in containerProps) {
+          containerProps.onPlay?.(thinking)
+        }
       } else {
-        onPause?.(thinking)
+        if ('onPause' in containerProps) {
+          containerProps.onPause?.(thinking)
+        }
       }
 
-      onStatusChanged?.({ paused: updatedState, thinking })
+      if ('onStatusChanged' in containerProps) {
+        containerProps.onStatusChanged?.({ paused: updatedState, thinking })
+      }
 
       return updatedState
     })
-  }, [onPause, onPlay, onStatusChanged, thinking])
+  }, [containerProps, thinking])
 
   const size = useMemo(() => {
     switch (variant) {
@@ -126,12 +122,18 @@ const NativeCircularStatus = ({
   }, [variant])
 
   const { style: containerStyle = {}, ...containerRest } = containerProps
-  const { style: contentStyle = {}, ...contentRest } = contentProps
-  const { style: iconStyle = {}, ...iconRest } = iconProps
+  const { style: contentStyle = {}, ...contentRest } =
+    'contentProps' in containerProps ? containerProps.contentProps || {} : {}
+  const { style: iconStyle = {}, ...iconRest } =
+    'iconProps' in containerProps ? containerProps.iconProps || {} : {}
 
   const innerComponent = useMemo(() => {
-    if (renderContent) {
-      return renderContent({ progress, paused: isLocalPaused, thinking })
+    if ('renderContent' in containerProps && containerProps.renderContent) {
+      return containerProps.renderContent({
+        progress: containerProps.progress,
+        paused: isLocalPaused,
+        thinking,
+      })
     }
 
     if (thinking && !iconThinking && !icon) {
@@ -157,17 +159,12 @@ const NativeCircularStatus = ({
       />
     )
   }, [
-    renderContent,
+    containerProps,
     thinking,
-    iconThinking,
-    icon,
     isLocalPaused,
-    iconPlay,
-    iconPause,
     colorPrimary,
     iconStyle,
     iconRest,
-    progress,
   ])
 
   const isNormal = useMemo(() => variant === 'normal', [variant])
@@ -212,7 +209,7 @@ const NativeCircularStatus = ({
         borderColor={colorSecondary}
         unfilledColor={isThinkingEnabled ? undefined : colorSecondary}
         color={colorPrimary}
-        progress={progress}
+        progress={containerProps.progress}
         size={size}
         thickness={PROGRESS_WIDTH}
         fill="#00000000" // TODO remove when https://github.com/oblador/react-native-progress/issues/234 is fixed
