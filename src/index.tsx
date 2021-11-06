@@ -89,7 +89,6 @@ const NativeCircularStatus = ({
     }
   }, [paused])
 
-  // TODO? remove useCallback
   const handlePress = useCallback(() => {
     setIsLocalPaused((prevState) => {
       const updatedState = thinking ? prevState : !prevState
@@ -106,7 +105,6 @@ const NativeCircularStatus = ({
     })
   }, [onPause, onPlay, onStatusChanged, thinking])
 
-  // TODO? remove useMemo
   const size = useMemo(() => {
     switch (variant) {
       case 'compact':
@@ -122,7 +120,6 @@ const NativeCircularStatus = ({
   const { style: contentStyle = {}, ...contentRest } = contentProps
   const { style: iconStyle = {}, ...iconRest } = iconProps
 
-  // TODO? remove useMemo
   const innerComponent = useMemo(() => {
     if (renderContent) {
       return renderContent({ progress, paused: isLocalPaused, thinking })
@@ -164,10 +161,8 @@ const NativeCircularStatus = ({
     progress,
   ])
 
-  // TODO? remove useMemo
   const isNormal = useMemo(() => variant === 'normal', [variant])
 
-  // TODO? remove useMemo
   const isThinkingEnabled = useMemo(
     () => thinking && isNormal,
     [isNormal, thinking]
