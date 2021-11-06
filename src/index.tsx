@@ -12,6 +12,7 @@ import type { IconProps } from 'react-native-vector-icons/Icon'
 
 const DEFAULTS = {
   ICON_PAUSE: 'square',
+  ICON_PLAY: 'pause',
   COLOR_PRIMARY: '#fb2c53',
   COLOR_SECONDARY: '#efefef',
 }
@@ -61,7 +62,7 @@ interface NativeCircularStatusProps
 const NativeCircularStatus = ({
   progress,
   iconPause = DEFAULTS.ICON_PAUSE,
-  iconPlay,
+  iconPlay = DEFAULTS.ICON_PLAY,
   iconThinking,
   icon,
   paused,
